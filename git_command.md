@@ -16,7 +16,6 @@
 	2，解决冲突
 	发生冲突后，使用git status可以查看到冲突文件是红色字体显示的。打开文件，冲突部分会有特定表示如下
 
-	<<<<<<< HEAD
 
 	冲突发生前，没有进行合并时，当前位置的代码
 
@@ -35,4 +34,28 @@
 	注：
 
 	有时>>>>>>>后面会跟一些描述信息，比如分支名称、提交时的注释等等。
+=======
+### 创建新分支
+	git branch [branch_name]
+>>>>>>> fetch_merge
 
+### 切换分支
+	git checkout [branch_name]
+
+### 显示分支
+	git branch [-a]
+
+### 查看远程分支
+	git branch -r
+
+### 删除本地分支
+	git branch -d [branch_name]
+
+### 删除远程分支
+	git push origin:[branch_name]
+
+## fetch和merge
+使用git fetch 更新远端跟踪分支
+
+### git merge合并分支产生冲突
+可以使用git status查看状态，git diff查看冲突
