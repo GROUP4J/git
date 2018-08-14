@@ -15,4 +15,4 @@
 	git branch -r
 
 ## fetch和merge
-
+使用git fetch 更新远端跟踪分支
