@@ -63,10 +63,10 @@
 ### 无冲突情况
 1.git pull:获取最新代码到本地，并自动合并到当前分支   
  
-    //查询当前远程分支版本
-    git remote -v
-	// 直接拉取并合并最新代码
-	git pull origin master [从远端origin/master分支合并到当前分支]
+    //查询当前远程分支版本 
+    git remote -v 
+	// 直接拉取并合并最新代码 
+	git pull origin master [从远端origin/master分支合并到当前分支] 
 
 2.git fetch+merge：获取最新代码到本地，然后手动合并 
 2.1 额外建立本地分支 
