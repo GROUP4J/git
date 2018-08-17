@@ -37,7 +37,6 @@
 =======
 ### 创建新分支
 	git branch [branch_name]
->>>>>>> fetch_merge
 
 ### 切换分支
 	git checkout [branch_name]
@@ -59,3 +58,40 @@
 
 ### git merge合并分支产生冲突
 可以使用git status查看状态，git diff查看冲突
+
+## 从远程仓库获取最新代码合并到本地分支
+### 无冲突情况
+1.git pull:获取最新代码到本地，并自动合并到当前分支  
+    //查询当前远程分支版本
+    git remote -v
+	// 直接拉取并合并最新代码
+	git pull origin master [从远端origin/master分支合并到当前分支]
+
+2.git fetch+merge：获取最新代码到本地，然后手动合并 
+2.1 额外建立本地分支
+    //查看当前远程版本
+    git remote -v
+	// 获取最新代码到本地临时分支
+	git fetch origin master:master1
+	// 查看版本差异
+	git diff master1 [查看master1与当前分支的版本差异]
+	// 合并最新分支到本地分支
+	git merge master
+	// 删除本地临时分支
+	git branch -D master1
+
+2.2 不额外建立本地分支
+	//查询当前远程版本
+    git remote -v
+	// 获取最新代码到本地（本地当前分支为[branch]，获取的远端分支为origin/branch]
+	git fetch origin master [获取远端的origin/master分支]
+	//查看版本差异
+	git log -p master origin/master [查看本地master与远端origin/master的版本差异]
+	// 合并最新代码到本地分支
+	git merge origin/master
+
+
+## git 远程强制更新到本地，覆盖本地工作空间
+	git fetch --all
+	git reset --hard origin/master [origin/master为要拉取的远程分支]
+	git pull [检查是否为最新]
